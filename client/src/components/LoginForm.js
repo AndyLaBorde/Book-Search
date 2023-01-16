@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Form, Button, Alert } from 'react-bootstrap';
 import { LOGIN_USER } from '../utils/mutations'
 import { useMutation } from '@apollo/client';
-import { loginUser } from '../utils/API';
+// import { loginUser } from '../utils/API';
 import Auth from '../utils/auth';
 
 
@@ -32,7 +32,7 @@ const LoginForm = () => {
     try {
       // Replace the loginUser() functionality imported from the API file with the LOGIN_USER mutation functionality.
       const { data } = await loginUser({
-        variables: { ... userFormData}
+        variables: { ...userFormData}
       }
       );
 
