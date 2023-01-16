@@ -21,7 +21,7 @@ const resolvers = {
             throw new AuthenticationError("No user with this email found!");
         }
 
-        const correctPw = await profile.isCorrectPassword(password);
+        const correctPw = await user.isCorrectPassword(password);
 
         if (!correctPw) {
             throw new AuthenticationError("Incorrect password!");
@@ -42,3 +42,5 @@ const resolvers = {
         },
     },
 };
+
+module.exports = resolvers;

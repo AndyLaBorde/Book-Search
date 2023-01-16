@@ -31,7 +31,10 @@ const LoginForm = () => {
 
     try {
       // Replace the loginUser() functionality imported from the API file with the LOGIN_USER mutation functionality.
-      const { data } = await loginUser();
+      const { data } = await loginUser({
+        variables: { ... userFormData}
+      }
+      );
 
       if (!data.ok) {
         throw new Error('something went wrong!');
