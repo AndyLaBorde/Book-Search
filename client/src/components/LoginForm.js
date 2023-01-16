@@ -1,11 +1,11 @@
 // see SignupForm.js for comments
 import React, { useState } from 'react';
 import { Form, Button, Alert } from 'react-bootstrap';
-
+import { LOGIN_USER } from '../utils/mutations'
+import { useMutations } from '@apollo/client';
 import { loginUser } from '../utils/API';
 import Auth from '../utils/auth';
 
-// Replace the loginUser() functionality imported from the API file with the LOGIN_USER mutation functionality.
 
 const LoginForm = () => {
   const [userFormData, setUserFormData] = useState({ email: '', password: '' });
@@ -28,7 +28,8 @@ const LoginForm = () => {
     }
 
     try {
-      const response = await loginUser(userFormData);
+      // Replace the loginUser() functionality imported from the API file with the LOGIN_USER mutation functionality.
+      const response = await useMutations(LOGIN_USER);
 
       if (!response.ok) {
         throw new Error('something went wrong!');
