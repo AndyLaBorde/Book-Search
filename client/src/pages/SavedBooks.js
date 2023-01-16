@@ -11,7 +11,8 @@ import { removeBookId } from '../utils/localStorage';
 // Remove the useState() Hook that sets the state for UserData.
 // Instead, use the useQuery() Hook to execute the GET_ME query on load and save it to a variable named userData.
 const SavedBooks = () => {
-  const [userData] = useQuery(GET_ME);
+  const [userData, setUserData] = useQuery(GET_ME);
+  const [removeBook, {error}] = useMutation(REMOVE_BOOK);
 
 
   // use this to determine if `useEffect()` hook needs to run again
