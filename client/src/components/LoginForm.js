@@ -11,7 +11,7 @@ const LoginForm = () => {
   const [userFormData, setUserFormData] = useState({ email: '', password: '' });
   const [validated] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
-  const [loginUser, { error }] = useMutation(LOGIN_USER);
+  const [login, { error }] = useMutation(LOGIN_USER);
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -31,27 +31,18 @@ const LoginForm = () => {
 
     try {
       // Replace the loginUser() functionality imported from the API file with the LOGIN_USER mutation functionality.
-      const { data } = await loginUser({
-        variables: { ...userFormData}
-      }
-      );
-
-      if (!data.ok) {
-        throw new Error('something went wrong!');
-      }
-
-      const { token, user } = await data.json();
-      console.log(user);
-      Auth.login(token);
+      const { data } = await login({
+        variables: { ...userFormData },
+      });
+      // grab keys from mutation
+      Auth.login(data.login.token);
     } catch (err) {
       console.error(err);
-      setShowAlert(true);
     }
-
+    // reset login form fields
     setUserFormData({
-      username: '',
-      email: '',
-      password: '',
+      email: "",
+      password: "",
     });
   };
 
