@@ -36,6 +36,8 @@ SO THAT I can keep a list of books to purchase
 ```
 
 ## Acceptance Criteria
+
+```
 GIVEN a book search engine
 WHEN I load the search engine
 THEN I am presented with a menu with the options Search for Books and Login/Signup and an input field to search for books and a submit button
@@ -73,17 +75,16 @@ THEN I am logged out of the site and presented with a menu with the options Sear
 
 As you can see in the following animation, a user can type a search term (in this case, "star wars") in a search box and the results appear:
 
-
+![application demo 1](client/public/images/21-mern-homework-demo-01.gif)
 
 The user can save books by clicking "Save This Book!" under each search result, as shown in the following animation:
 
-
+![application demo 2](client/public/images/21-mern-homework-demo-02.gif)
 
 A user can view their saved books on a separate page, as shown in the following animation:
 
+![application demo 3](client/public/images/21-mern-homework-demo-03.gif)
 
-
-// under construction//
 
 ## Deployed Application
 
@@ -91,7 +92,7 @@ https://book-search-app.herokuapp.com/
 
 ## Contributions
 
-// N/A //
+Yes, thank you! All contributions are welcome
 
 ## License
 
